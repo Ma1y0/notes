@@ -5,11 +5,13 @@ export default function AddModal() {
   const [note, setNote] = useState("");
 
   const submitNote = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
     addNote(note);
 
     document.getElementById("add_modal")?.close();
 
-    e.preventDefault();
+    setNote("");
   };
 
   return (
